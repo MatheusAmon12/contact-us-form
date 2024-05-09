@@ -78,7 +78,7 @@ const Form = ({children}: {children: ReactNode}) => {
                     }
                 </div>
 
-                <Button className=" text-xl h-12 w-full text-white font-sans" type="submit">
+                <Button className=" text-xl h-12 w-full text-white font-sans hover:bg-[#D97F6F]" type="submit">
                     Enviar
                 </Button>
             </form>
