@@ -19,9 +19,9 @@ const Form = ({children}: {children: ReactNode}) => {
     }
 
     return ( 
-        <div  className='px-6'>
+        <div className="px-6">
             {children}
-            <form onSubmit={handleSubmit(handleSubmitClick)} className="space-y-6">
+            <form onSubmit={handleSubmit(handleSubmitClick)} className="space-y-6 xl:w-full">
                 <div>
                     <Input
                         className="border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans"
