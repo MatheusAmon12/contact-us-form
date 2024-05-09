@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {  useForm } from "react-hook-form";
 import { z } from "zod";
 import { ReactNode } from "react";
+import { toast } from "sonner";
 
 type FormDataSchema = z.infer<typeof formSchema>
 
@@ -16,6 +17,7 @@ const Form = ({children}: {children: ReactNode}) => {
 
     const handleSubmitClick = (data: FormDataSchema) => {
         console.log(data)
+        toast.success('Enviado com sucesso!')
     }
 
     return ( 
