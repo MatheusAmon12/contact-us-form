@@ -5,28 +5,33 @@ import { Textarea } from "./ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {  useForm } from "react-hook-form";
 import { z } from "zod";
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import { toast } from "sonner";
 
 type FormDataSchema = z.infer<typeof formSchema>
 
 const Form = ({children}: {children: ReactNode}) => {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormDataSchema>({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormDataSchema>({
         resolver: zodResolver(formSchema),
     })
 
+    const formRef = useRef<HTMLFormElement>(null)
+
     const handleSubmitClick = (data: FormDataSchema) => {
+        //console apenas para debug
         console.log(data)
+        
+        reset()
         toast.success('Enviado com sucesso!')
     }
 
     return ( 
         <div>
             {children}
-            <form onSubmit={handleSubmit(handleSubmitClick)} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit(handleSubmitClick)} className="space-y-6">
                 <div>
                     <Input
-                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14 xl:text-[20px]"
+                        className="text-sm bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans lg:placeholder:text-[20px] xl:h-14 xl:text-[20px]"
                         placeholder="Nome"
                         {...register('name')}
                         autoFocus
@@ -41,7 +46,7 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Input
-                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14 xl:text-[20px]"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans lg:placeholder:text-[20px] xl:h-14 xl:text-[20px]"
                         placeholder="E-mail"
                         { ...register('email') }
                     />
@@ -55,7 +60,7 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Input
-                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14 xl:text-[20px]"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans lg:placeholder:text-[20px] xl:h-14 xl:text-[20px]"
                         placeholder="Assunto"
                         {...register('subject')}
                     />
@@ -69,7 +74,7 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Textarea
-                        className="bg-transparent border-primary font-sans text-white min-h-52 placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:text-[20px]"
+                        className="bg-transparent border-primary font-sans text-white min-h-52 placeholder:text-primary-foreground placeholder:font-sans lg:placeholder:text-[20px] xl:text-[20px]"
                         placeholder="Mensagem"
                         {...register('content')}
                     />
