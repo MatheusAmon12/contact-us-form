@@ -27,6 +27,7 @@ const Form = ({children}: {children: ReactNode}) => {
                         className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14 xl:text-[20px]"
                         placeholder="Nome"
                         {...register('name')}
+                        autoFocus
                     />
                     {
                         errors.name && 
