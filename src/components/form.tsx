@@ -1,4 +1,4 @@
-import { formSchema } from "@/utils/validationSchema";
+import { formSchema } from "@/lib/validationSchema";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
