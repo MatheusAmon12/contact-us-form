@@ -19,12 +19,12 @@ const Form = ({children}: {children: ReactNode}) => {
     }
 
     return ( 
-        <div className="px-6">
+        <div className="px-6 xl:px-48">
             {children}
             <form onSubmit={handleSubmit(handleSubmitClick)} className="space-y-6 xl:w-full">
                 <div>
                     <Input
-                        className="border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14"
                         placeholder="Nome"
                         {...register('name')}
                     />
@@ -38,7 +38,7 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Input
-                        className="border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14"
                         placeholder="E-mail"
                         { ...register('email') }
                     />
@@ -52,7 +52,7 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Input
-                        className="border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14"
                         placeholder="Assunto"
                         {...register('subject')}
                     />
@@ -66,7 +66,7 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Textarea
-                        className="border-primary font-sans text-white min-h-52 placeholder:text-primary-foreground placeholder:font-sans"
+                        className="bg-transparent border-primary font-sans text-white min-h-52 placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px]"
                         placeholder="Mensagem"
                         {...register('content')}
                     />
