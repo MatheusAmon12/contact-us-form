@@ -19,7 +19,7 @@ const Form = ({children}: {children: ReactNode}) => {
     }
 
     return ( 
-        <>
+        <div  className='px-6'>
             {children}
             <form onSubmit={handleSubmit(handleSubmitClick)} className="space-y-6">
                 <div>
@@ -82,7 +82,7 @@ const Form = ({children}: {children: ReactNode}) => {
                     Enviar
                 </Button>
             </form>
-        </>
+        </div>
      );
 }
  

@@ -19,6 +19,12 @@ export default {
     fontFamily: {
       sans: ["var(--font-primary)", "sans-serif"],
     },
+    backgroundImage: {
+      "gradient-button": "url('/gradient-button.png')",
+      "gradient-button-sm": "url('/gradient-button-sm.png')",
+      "computer": "url('/background.png')",
+      "computer-sm": "url('/background-sm.png')",
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
