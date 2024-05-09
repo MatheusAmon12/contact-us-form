@@ -24,13 +24,13 @@ const Form = ({children}: {children: ReactNode}) => {
             <form onSubmit={handleSubmit(handleSubmitClick)} className="space-y-6">
                 <div>
                     <Input
-                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14 xl:text-[20px]"
                         placeholder="Nome"
                         {...register('name')}
                     />
                     {
                         errors.name && 
-                        <span className="pt-1 text-xs block h-fit text-destructive text-left">
+                        <span className="pt-1 text-xs block h-fit text-destructive text-left lg:text-sm">
                             {errors.name.message}
                         </span>
                     }
@@ -38,13 +38,13 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Input
-                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14 xl:text-[20px]"
                         placeholder="E-mail"
                         { ...register('email') }
                     />
                     {
                         errors.email &&
-                        <span className="pt-1 text-xs block h-fit text-destructive text-left">
+                        <span className="pt-1 text-xs block h-fit text-destructive text-left lg:text-sm">
                             {errors.email.message}
                         </span>
                     }
@@ -52,13 +52,13 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Input
-                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14"
+                        className="bg-transparent border-primary font-sans text-white placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:h-14 xl:text-[20px]"
                         placeholder="Assunto"
                         {...register('subject')}
                     />
                     {
                         errors.subject && 
-                        <span className="pt-1 text-xs block h-fit text-destructive text-left">
+                        <span className="pt-1 text-xs block h-fit text-destructive text-left lg:text-sm">
                             {errors.subject.message}
                         </span>
                     }
@@ -66,13 +66,13 @@ const Form = ({children}: {children: ReactNode}) => {
 
                 <div>
                     <Textarea
-                        className="bg-transparent border-primary font-sans text-white min-h-52 placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px]"
+                        className="bg-transparent border-primary font-sans text-white min-h-52 placeholder:text-primary-foreground placeholder:font-sans placeholder:text-[20px] xl:text-[20px]"
                         placeholder="Mensagem"
                         {...register('content')}
                     />
                     {
                         errors.content && 
-                        <span className="pt-1 text-xs block h-fit text-destructive text-left">
+                        <span className="pt-1 text-xs block h-fit text-destructive text-left lg:text-sm">
                             {errors.content.message}
                         </span>
                     }
